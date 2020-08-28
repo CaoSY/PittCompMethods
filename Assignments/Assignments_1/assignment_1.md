@@ -213,3 +213,18 @@ As shown above, `nm` mangles function names and `c++filt` reverses it.
 
 ## Problem 2
 
+The code is under "CH1/EX1".
+
+```bash
+$ ldd exp
+	linux-vdso.so.1 (0x00007fff3e19e000)
+	libstdc++.so.6 => /lib/x86_64-linux-gnu/libstdc++.so.6 (0x00007f25f3f76000)
+	libm.so.6 => /lib/x86_64-linux-gnu/libm.so.6 (0x00007f25f3e27000)
+	libgcc_s.so.1 => /lib/x86_64-linux-gnu/libgcc_s.so.1 (0x00007f25f3e0c000)
+	libc.so.6 => /lib/x86_64-linux-gnu/libc.so.6 (0x00007f25f3c1a000)
+	/lib64/ld-linux-x86-64.so.2 (0x00007f25f4172000)
+
+$ nm exp | c++filt
+
+# The output is omitted since it is similar the that in EX1 except it's much longer.
+```
