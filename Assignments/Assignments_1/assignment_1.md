@@ -246,3 +246,14 @@ The shell first resolve what is `CH1/EX4/foo*` and execute what the result is.
 ## Problem 5
 
 The code is under "CH1/EX5".
+
+## Problem 6
+
+The code is under "CH1/EX6"
+
+The Makefile rules are
+```bash
+make plus
+make libPlus.a
+make clean
+```
