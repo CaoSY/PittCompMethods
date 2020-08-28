@@ -223,3 +223,23 @@ $ nm myexp | c++filt | grep -i exp
 ```
 
 The address of `exp` is described by "exp@@GLIBC_2.29" while the address of `myExp` is hardcoded in the program.
+
+## Problem 4
+
+```bash
+$ pwd
+/home/vm-u/Desktop/PittCompMethods/Assignments/Assignments_1/CH1/EX4
+
+$ cd ../..
+$ CH1/EX4/foo*
+CH1/EX4/foo CH1/EX4/foo.cpp 
+```
+
+The output can be explained by the command below.
+```bash
+$ echo $(CH1/EX4/foo*)
+CH1/EX4/foo CH1/EX4/foo.cpp
+```
+
+The shell first resolve what is `CH1/EX4/foo*` and execute what the result is.
+
