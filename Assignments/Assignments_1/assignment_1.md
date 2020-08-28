@@ -2,6 +2,16 @@
 
 #### Shuyang Cao
 
+- [Assignment 1](#assignment-1)
+      - [Shuyang Cao](#shuyang-cao)
+  - [Problem 1](#problem-1)
+  - [Problem 2](#problem-2)
+  - [Problem 3](#problem-3)
+  - [Problem 4](#problem-4)
+  - [Problem 5](#problem-5)
+  - [Problem 6](#problem-6)
+  - [Problem 7](#problem-7)
+
 ## Problem 1
 
 Code for this problem.
@@ -190,13 +200,16 @@ $ nm exp3 | c++filt
 0000000000002008 r std::piecewise_construct
 0000000000004151 b std::__ioinit
 ```
-As shown above, `nm` mangles function names and `c++filt` reverses it.
+As shown above, `nm` mangles symbol names and `c++filt` reverses it.
 
 ## Problem 2
 
 The code is under "CH1/EX2".
 
 ```bash
+$ ./exp 1 2 3 4
+2.71828 7.38906 20.0855 54.5982 
+
 $ ldd exp
 	linux-vdso.so.1 (0x00007fff3e19e000)
 	libstdc++.so.6 => /lib/x86_64-linux-gnu/libstdc++.so.6 (0x00007f25f3f76000)
@@ -207,7 +220,7 @@ $ ldd exp
 
 $ nm exp | c++filt
 
-# The output is omitted since it is similar the that in EX1 except it's much longer.
+# The output is omitted since it is similar to that in EX1 except it's much longer.
 ```
 
 ## Problem 3
@@ -241,7 +254,7 @@ $ echo $(CH1/EX4/foo*)
 CH1/EX4/foo CH1/EX4/foo.cpp
 ```
 
-The shell first resolve what is `CH1/EX4/foo*` and execute what the result is.
+The shell first resolve what is `CH1/EX4/foo*` and execute whatever the result is.
 
 ## Problem 5
 
