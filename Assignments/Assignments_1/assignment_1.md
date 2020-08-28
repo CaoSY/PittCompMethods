@@ -249,7 +249,7 @@ The code is under "CH1/EX5".
 
 ## Problem 6
 
-The code is under "CH1/EX6"
+The code is under "CH1/EX6".
 
 The Makefile rules are
 ```bash
@@ -257,3 +257,28 @@ make plus
 make libPlus.a
 make clean
 ```
+
+## Problem 7
+
+
+The code is under "CH1/EX7".
+
+The Makefile rules are
+
+```bash
+make plus
+make libPlus.so
+make clean
+```
+
+To execute `plus`, run
+```bash
+LD_LIBRARY_PATH=./ ./plus #arg1 #arg2
+```
+
+Check the size of `plus` using
+```bash
+ls -hl | grep plus
+```
+
+The file size of `plus` is 17kB (linked to a shared library) or 19kB (linked to a static library).
