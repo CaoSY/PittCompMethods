@@ -52,7 +52,6 @@ int main(int argc, char **argv)
 }
 ```
 
-Using exp() as an example for this problem is really **BAD** idea for the following reasons.
 
 First let's check output from ldd first.
 ```bash
@@ -83,7 +82,7 @@ $ ldd exp3
 
 The `main` function is not the line executed when a program is run. It's not even the first routine executed in a program. Some code is needed for creating process, setting up runtime enviroment for a program to live in. So we find that `libc.so` is needed even in an empty program.
 
-The comes an issue. We anticipate `libm.so` is needed in `exp1.cpp` as in `exp2.cpp` since both of them invoke `exp()`. However `libm.so` is not linked until `exp2.cpp`. I guess this is due to the default optimization of GCC. In `exp1.cpp`, a constant is provided for `exp()`, which suggests that the result of `exp()` can be calculated at compiling time instead of runtime. Thus the invoke of `exp()` is optimized out. Actually if we set the optimization level high enough, `exp()` in `exp2.cpp` could also be optimized out.
+Then comes an issue. We anticipate `libm.so` is needed in `exp1.cpp` as in `exp2.cpp` since both of them invoke `exp()`. However `libm.so` is not linked until `exp2.cpp`. I guess this is due to the default optimization of GCC. In `exp1.cpp`, a constant is provided for `exp()`, which suggests that the result of `exp()` can be calculated at compiling time instead of runtime. Thus the invocation of `exp()` is optimized out. Actually if we set the optimization level high enough, `exp()` in `exp2.cpp` could also be optimized out.
 
 Then we investigate the output from `file`. The four output are the same except their names and their SHA1 signatures since they are compiled on the same platform using the same compiler configuration. So we use the output of `exp0.cpp` as an exmaple.
 
@@ -133,17 +132,12 @@ $ nm exp0 | c++filt
 As we can see, our `main()` function doesn't appear until the last fourth row. All rows before the "main" symbol are setup code mentioned above. Since the setup procedure are the same for most programs, we only focus on the part starting from `main` below.
 
 ```bash
-$ nm exp1 | c++filt
-0000000000001129 T main
-00000000000010a0 t register_tm_clones
-0000000000001040 T _start
-0000000000004010 D __TMC_END__
+$ nm exp1 | c++filt | grep exp
 
-$ nm exp2 | c++filt
-0000000000001149 T main
-00000000000010c0 t register_tm_clones
-0000000000001060 T _start
-0000000000004010 D __TMC_END__
+
+$ nm exp2 | c++filt | grep exp
+    U exp@@GLIBC_2.29
+
 
 $ nm exp3 | c++filt
 00000000000011a9 T main
@@ -161,20 +155,7 @@ $ nm exp3 | c++filt
 0000000000004151 b std::__ioinit
 ```
 
-It should not be surprising that the output of `exp1.cpp` is the same as `exp0.cpp` if we agree that the invoke of `exp()` is optimized out in `exp1.cpp`. The problem is that we can't find function invocation in `exp2.cpp`, either. I guess this is due to the implemention of `exp()`, which is shown below.
-
-```cpp
-#ifndef __CORRECT_ISO_CPP_MATH_H_PROTO
-    inline _GLIBCXX_CONSTEXPR float
-    exp(float __x)
-    { return __builtin_expf(__x); }
-    inline _GLIBCXX_CONSTEXPR long double
-    exp(long double __x)
-    { return __builtin_expl(__x); }
-#endif
-```
-
-`exp()` is defined to be an inline function, which means the preprocessor will unfold `exp()` first and the compiler doesn't see any function invocation here. It's highly probable that `exp()` is implemented in assembly code for performance so that there is any symbol there. In `exp3.cpp`, `cout` obviously cannot be implemented as an inline function. Hence, we are able to find some function invocations in the output.
+It should not be surprising that the output of `exp1.cpp` is the same as `exp0.cpp` if we agree that the invocation of `exp()` is optimized out in `exp1.cpp`. 
 
 Finally we have a look at the effect of `nm`. We take the output from `exp3.cpp` as our example. Again, we omit the part for setup code.
 
@@ -213,7 +194,7 @@ As shown above, `nm` mangles function names and `c++filt` reverses it.
 
 ## Problem 2
 
-The code is under "CH1/EX1".
+The code is under "CH1/EX2".
 
 ```bash
 $ ldd exp
@@ -228,3 +209,17 @@ $ nm exp | c++filt
 
 # The output is omitted since it is similar the that in EX1 except it's much longer.
 ```
+
+## Problem 3
+
+The code is under "CH1/EX3".
+
+```bash
+$ nm myexp | c++filt | grep -i exp
+                 U exp@@GLIBC_2.29
+000000000000141e t _GLOBAL__sub_I__Z5myExpd
+0000000000001229 T myExp(double)
+0000000000001467 W __gnu_cxx::__enable_if<std::__is_integer<int>::__value, double>::__type std::exp<int>(int)
+```
+
+The address of `exp` is described by "exp@@GLIBC_2.29" while the address of `myExp` is hardcoded in the program.
