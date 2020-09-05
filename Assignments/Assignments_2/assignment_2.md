@@ -2,6 +2,20 @@
 
 #### Shuyang Cao
 
+- [Assignment 2](#assignment-2)
+      - [Shuyang Cao](#shuyang-cao)
+  - [Problem 1](#problem-1)
+    - [The maximum](#the-maximum)
+    - [The minimum](#the-minimum)
+    - [The epsilon](#the-epsilon)
+    - [The output from the program](#the-output-from-the-program)
+  - [Problem 2](#problem-2)
+  - [Problem 6](#problem-6)
+  - [Problem 7](#problem-7)
+  - [Problem 8](#problem-8)
+  - [Problem 9](#problem-9)
+  - [Problem 10](#problem-10)
+
 ## Problem 1
 
 IEEE 754 is adopted.
@@ -228,4 +242,38 @@ x1 -> (1.224646799147353e-16,-2.220446049250313e-16)    x2 -> (-1.22464679914735
 x1 -> (1.482393534508254,-0.5971629856028875)           x2 -> (-3.482393534508254,-1.402837014397113)           	
 x1 -> (0,2.220446049250313e-16)                         x2 -> (-2,-2)                                           	
 x1 -> (-0.5971629856028875,1.482393534508254)           x2 -> (-1.402837014397113,-3.482393534508254) 
+```
+
+## Problem 10
+
+The characteristic equation is solved by hard-coded analytic expression.
+
+The homogeneous linear equations of each eigenvalue are solved by a random algorithm.
+
+1. $B=A-\lambda I$
+2. Conjugate each row vector of $B$ and find basis $\{u_i\}$ of row space using Gram-Schmidt process.. Note that $Dimension(\{u_i\})=Rank(B)=N-\mu(\lambda)$, where $\mu$ is the multiplicity of $\lambda$. $\mu(\lambda)$ is equal to dimension of null space.
+3. Generate a random vector $v$.
+4. Make $v$ orthogonal to to $\{u_i\}$ using Gram-Schmidt process.
+5. Repeat 3,4 $\mu$ times.
+6. Orthonormalize $\{v_i\}$.
+
+In theory there exists possibilities that $\{v_i\}$ are linearly dependent. But the probablity is $0^+$.
+
+```bash
+$ cat test.txt | ./eig33 
+Matrix:
+(0.333333,0) (-0.244017,0) (0.910684,0) 
+(0.910684,0) (0.333333,0) (-0.244017,0) 
+(-0.244017,0) (0.910684,0) (0.333333,0) 
+
+Eigenvalues:                  Order
+(-5.01123e-08,-1)             1
+(-5.01123e-08,1)              1
+(0.999999,-0)                 1
+
+Eigenvectors:
+(-0.288675,-0.5)               (0.57735,-4.75362e-08)         (0.57735,1.38778e-17)          
+(0.577351,-1.77408e-07)        (-0.288675,-0.5)               (0.577351,-4.16334e-17)        
+(-0.288675,0.5)                (-0.288675,0.5)                (0.57735,-5.55112e-17)         
+ 
 ```
