@@ -48,7 +48,7 @@ int main(int argc, char **argv)
     Complex AppBpp = Bpp - App, AppCpp = Cpp - App;
 
     cout << "A'' = " << App << endl;
-    cout << "B'' - " << Bpp << endl;
+    cout << "B'' = " << Bpp << endl;
     cout << "C'' = " << Cpp << endl;
     cout << "Area of A''B''C'': " << Area(AppBpp, AppCpp) << endl;
 
