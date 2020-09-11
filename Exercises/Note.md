@@ -10,3 +10,7 @@
     ```bash
     $ sudo apt install libeigen3-dev libeigen3-doc
     ```
+3. Install QAT
+   ```
+   [Install Instructions](http://qat.pitt.edu/install.html)
+   ```
