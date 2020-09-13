@@ -24,3 +24,35 @@ Matrix:
 0.3 0.2 1.5
 Volume computed from determinant: 9
 ```
+
+## Problem 2
+
+```bash
+$ ./plot -h
+Usage: ./plot [options] functionNumber
+This program plots six functions and their derivatives.
+	1. sin(x)
+	2. sin(5x)
+	3. sin(x^2
+	4. e^(-x)sin(x)
+	5. Associated Legendre Polynomial with n = 3 and m = 2
+	6. Gaussian Distribution
+
+
+Options:
+  -h, --help     Displays this help.
+  -v, --version  Displays version information.
+  -p, --prime    flag to plot derivative of the chosen function.
+
+Arguments:
+  functionNumber Serial number of the function to be plotted.
+```
+
+### Function Graphs
+
+* ![Sin(x)](CH3/EX3/1.svg)
+* ![Sin(5x)](CH3/EX3/2.svg)
+* ![Sin(x^2)](CH3/EX3/3.svg)
+* ![e^(-x)*Sin(x)](CH3/EX3/4.svg)
+* ![P_3^2 (x)](CH3/EX3/5.svg)
+* ![e^(-x^2)](CH3/EX3/6.svg)
