@@ -140,3 +140,14 @@ From these graphs we can clearly see the wave-particle duality. Resonance happen
   * ![reflection](CH3/EX7/reflection.bmp)
 * Transmission
   * ![transmission](CH3/EX7/transmission.bmp)
+
+## Chapter 3 Exercise 8
+
+As ka increases, the transimisson coefficient decays. The behaviour of the wave fucntion transitions from wave-like to particle like.
+
+* ![ka=0.01](CH3/EX8/0.01.svg)
+* ![ka=0.1](CH3/EX8/0.1.svg)
+* ![ka=0.25](CH3/EX8/0.25.svg)
+* ![ka=0.5](CH3/EX8/0.5.svg)
+* ![ka=1](CH3/EX8/1.svg)
+* ![ka=2](CH3/EX8/2.svg)
