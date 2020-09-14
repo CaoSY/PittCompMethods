@@ -74,3 +74,69 @@ Arguments:
 * ![k=1 a=1 v=0.5](CH3/EX6/0.5.svg)
 * ![k=1 a=1 v=2](CH3/EX6/2.svg)
 * ![k=1 a=1 v=-2](CH3/EX6/-2.svg)
+
+## Chapter 3 Exercise 7
+
+$$
+\Psi(x)=\left\{
+\begin{array}{ll}
+	A{e}^{ikx} + B{e}^{-ikx} & x \leq -2a \\
+	C{e}^{ik_1x} + D{e}^{-ik_1x} & -2a < x \leq -a\\
+	Fe^{ik_2x} + Ge^{-ik_2x} & -a < x \leq a\\
+	He^{ik_1x} + Me^{-ik_1x} & a < x \leq 2a\\
+	Pe^{ikx} & x > 2a
+\end{array} 
+\right.
+$$
+
+*where*
+
+$$
+k=\sqrt{\frac{2mE}{\hbar^2}}, k_1=k\sqrt{1-v}, k_2=\sqrt{1-2v}
+$$
+
+*Define*
+
+$$
+b=B/A, c=C/A, d=D/A, f=F/A, g=G/A, h=H/A, m=M/A, p=P/A
+$$
+
+Liear equations is
+
+$$
+\begin{pmatrix}
+	e^{2ika} & -e^{-2ik_1a} & -e^{2ik_1a} & 0 & 0 & 0 & 0 & 0 \\
+	0 & e^{-ik_1a} & e^{ik_1a} & -e^{-ik_2a} & -e^{ik_2a} & 0 & 0 & 0 \\
+	0 & 0 & 0 & e^{ik_2a} & e^{-ik_2a} & -e^{ik_1a} & -e^{-ik_1a} & 0 \\
+	0 & 0 & 0 & 0 & 0 & e^{2ik_1a} & e^{-2ik_1a} & -e^{2ika} \\
+	-ikae^{2ika} & -ik_1ae^{-2ik_1a} & ik_1ae^{2ik_1a} & 0 & 0 & 0 & 0 & 0 \\
+	0 & ik_1ae^{-ik_1a} & -ik_1ae^{ik_1a} & -ik_2ae^{-ik_2a} & ik_2ae^{ik_2a} & 0 & 0 & 0 \\
+	0 & 0 & 0 & ik_2ae^{ik_2a} & -ik_2ae^{-ik_2a} & -ik_1ae^{ik_1a} & ik_1ae^{-ik_1a} & 0 \\
+	0 & 0 & 0 & 0 & 0 & ik_1ae^{2ik_1a} & -ik_1ae^{-2ik_1a} & -ikae^{2ika} \\
+\end{pmatrix}
+\vec{X}
+=
+\begin{pmatrix}
+	-e^{-2ika} \\
+	0 \\
+	0 \\
+	0 \\
+	-ikae^{-2ika} \\
+	0 \\
+	0 \\
+	0 \\
+\end{pmatrix}
+$$
+
+### Transmission and Reflection Graph
+
+The reflection and transmission graph and colormap are shown below, where the horzitonal axes are ***v*** from -2.5 to 2.5, the vertical axes are ***ka*** from $0^+$ to 3 and the black dashed line indicats $v=0$. ***0*** is mapped to red and ***1*** is mapped to blue. Note that reflection graph and transmission graph are complementary to each other as we expected.
+
+From these graphs we can clearly see the wave-particle duality. Resonance happens at some ka when v < 0. When v > 0, the v where reflection is nearly 100% becomes closer to 1 as ka increases.
+
+* Colormap
+  * $0$ ![colormap](CH3/EX7/colormap.bmp) $1$
+* Reflection
+  * ![reflection](CH3/EX7/reflection.bmp)
+* Transmission
+  * ![transmission](CH3/EX7/transmission.bmp)
