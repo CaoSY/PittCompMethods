@@ -151,3 +151,19 @@ As ka increases, the transimisson coefficient decays. The behaviour of the wave 
 * ![ka=0.5](CH3/EX8/0.5.svg)
 * ![ka=1](CH3/EX8/1.svg)
 * ![ka=2](CH3/EX8/2.svg)
+
+## Chapter 3 Exercise 9
+
+As shown below, when k becomes larger, the solution is not stable until a larger N, which is anticipated since larger k corresponds to smaller length scale.
+
+Another feature expected is that as k becomes larger, the transmission with respect to barrier potentials transitions from continuity to a jump, which is also anticipated since particles behaves more classically as k increases.
+
+An artificial feature in the following graph is the transmission coefficient when N=2. This is caused by the way potential is sampled in my program. In this program, potential is sampled at the midpoint of each bin. So when the number of bins is 2, the sampled potentials are far smaller that the real potential.
+
+* $v=0$![colormap](CH3/EX9/colormap.bmp)$v=2$
+* ![k=0.1](CH3/EX9/0.1.svg)
+* ![k=0.6](CH3/EX9/0.6.svg)
+* ![k=1](CH3/EX9/1.svg)
+* ![k=1.25](CH3/EX9/1.25.svg)
+* ![k=5](CH3/EX9/5.svg)
+* ![k=10](CH3/EX9/10.svg)
