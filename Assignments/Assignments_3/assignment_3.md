@@ -2,6 +2,19 @@
 
 #### Shuyang Cao
 
+- [Assignment 3](#assignment-3)
+			- [Shuyang Cao](#shuyang-cao)
+	- [Chapter 3 Exercise 1](#chapter-3-exercise-1)
+	- [Chapter 3 Exercise 3](#chapter-3-exercise-3)
+		- [Function Graphs](#function-graphs)
+	- [Chapter 3 Exercise 6](#chapter-3-exercise-6)
+		- [Density Graph](#density-graph)
+	- [Chapter 3 Exercise 7](#chapter-3-exercise-7)
+		- [Transmission and Reflection Graph](#transmission-and-reflection-graph)
+	- [Chapter 3 Exercise 8](#chapter-3-exercise-8)
+	- [Chapter 3 Exercise 9](#chapter-3-exercise-9)
+	- [Chapter 3 Exercise 14](#chapter-3-exercise-14)
+
 ## Chapter 3 Exercise 1
 
 The volume spanned by three vectors can be computed through
@@ -113,9 +126,7 @@ $$
 	0 & ik_1ae^{-ik_1a} & -ik_1ae^{ik_1a} & -ik_2ae^{-ik_2a} & ik_2ae^{ik_2a} & 0 & 0 & 0 \\
 	0 & 0 & 0 & ik_2ae^{ik_2a} & -ik_2ae^{-ik_2a} & -ik_1ae^{ik_1a} & ik_1ae^{-ik_1a} & 0 \\
 	0 & 0 & 0 & 0 & 0 & ik_1ae^{2ik_1a} & -ik_1ae^{-2ik_1a} & -ikae^{2ika} \\
-\end{pmatrix}
-\vec{X}
-=
+\end{pmatrix} \vec{X} =
 \begin{pmatrix}
 	-e^{-2ika} \\
 	0 \\
@@ -167,3 +178,20 @@ An artificial feature in the following graph is the transmission coefficient whe
 * ![k=1.25](CH3/EX9/1.25.svg)
 * ![k=5](CH3/EX9/5.svg)
 * ![k=10](CH3/EX9/10.svg)
+
+## Chapter 3 Exercise 14
+
+Note that there is a ***BUG*** in `wavefunction.cpp/constructMaxtrix()` of previous exercises. But this bug doesn't affect computing density and reflection or transmission coefficients. So I only fix the bug in this exercise and don't bother fix the bug in previous exercises.
+
+Choose an appropriate unit for time so that $\omega = 1$. This means that the time units using in the following graph are different. But this is OK since we don't put them in one graph and compare.
+
+* ![k=0.1,v=-4](CH3/EX14/0.1--4.svg)
+* ![k=0.1,v=0.5](CH3/EX14/0.1-0.5.svg)
+* ![k=0.1,v=4](CH3/EX14/0.1-4.svg)
+* ![k=1,v=-4](CH3/EX14/1--4.svg)
+* ![k=1,v=0.5](CH3/EX14/1-0.5.svg)
+* ![k=1,v=4](CH3/EX14/1-4.svg)
+* ![k=4,v=-4](CH3/EX14/4--4.svg)
+* ![k=4,v=0.5](CH3/EX14/4-0.5.svg)
+* ![k=4,v=4](CH3/EX14/4-4.svg)
+
