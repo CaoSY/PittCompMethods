@@ -75,3 +75,40 @@ $$
 Positions of five balls are shown below, where the black line is the position of the center of mass of the system.
 
 ![trace](CH3/EX13/trace.svg)
+
+## Chapter 4 Exercise 3
+
+The skeleton code is copied directly from https://github.com/jfb3615/ACP-Misc/tree/master/SKELETONS/CH4/P1.
+
+Coordinates of points are
+
+```bash
+$ cat data/points.txt 
+127.9 225.6
+227.8 302.8
+355 287
+391.8 300.5
+478.5 268
+515.5 237
+526.5 192
+521.5 114.5
+553.5 82.7
+
+```
+
+The bus route is interpolated by a curve parameterize by t.
+
+$$
+\left\{
+\begin{array}{ll}
+    X(s)\\
+    Y(s)\\
+\end{array}
+\right.
+$$
+
+where $s$ is the distance to the port authority. $s$ of each bus station is estimated by add up distances between adjacent bus stations from the port authority to the current bus station.
+
+As shown below, bus stations are circled by green circles and the fitted route is depicted by a blue line.
+
+![Fitted route](CH4/EX3/data/fit.png)
