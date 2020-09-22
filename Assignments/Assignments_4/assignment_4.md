@@ -137,3 +137,19 @@ $ cat ../../data/points.txt | ./p1
 ```
 
 ![Fitted route](CH4/EX4/data/fit.png)
+
+## Chapter 4 Exercise 5
+
+Predictions given by polynomical interpolation (solid line), cubic spline interpolation (dash line) and linear regression (dot line) are shown below.
+
+Actually, the price of Château Lafite Rothschild rode a roller coaster around 2009, as shown [here](https://www.jeanniecholee.com/my_views/chateau-lafite-rothschild/). So even the most conservative predicion given by linear regression is far away from the real price.
+
+```bash
+$ cat price.txt | ./trend 
+Year                2020                2021                Profit              
+Polynomical         70728               90380               19652               
+Cubic Spline        7089.32             7720.36             631.036             
+Linear Regression   3383.1              3617.8              234.7      
+```
+
+![Price Trend](CH4/EX5/trend.png)
