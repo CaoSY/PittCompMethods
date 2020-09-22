@@ -111,4 +111,8 @@ where $s$ is the distance to the port authority. $s$ of each bus station is esti
 
 As shown below, bus stations are circled by green circles and the fitted route is depicted by a blue line.
 
+```bash
+$ cat ../../data/points.txt | ./p1
+```
+
 ![Fitted route](CH4/EX3/data/fit.png)
