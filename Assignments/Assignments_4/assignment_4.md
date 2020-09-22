@@ -107,7 +107,7 @@ $$
 \right.
 $$
 
-where $s$ is the distance to the port authority. $s$ of each bus station is estimated by add up distances between adjacent bus stations from the port authority to the current bus station.
+where $s$ is the distance to the port authority. $s$ of each bus station is estimated by add up distances between adjacent bus stations from the port authority to the current bus station. By using parameterized functions, we avoid directly ploting a multi-value $Y(X)$.
 
 As shown below, bus stations are circled by green circles and the fitted route is depicted by a blue line.
 
