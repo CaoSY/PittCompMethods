@@ -72,7 +72,7 @@ $$
 \Omega^2\cdot\bold{b}=\omega^2\bold{b}
 $$
 
-Positions of five balls are shown below, where the black line is the position of the center of mass of the system.
+Positions of five balls are shown below, where the black line is the position of the center of mass of the system. A horizontal black line exhibits the conservation of total momentum of the system.
 
 ![trace](CH3/EX13/trace.svg)
 
