@@ -116,3 +116,24 @@ $ cat ../../data/points.txt | ./p1
 ```
 
 ![Fitted route](CH4/EX3/data/fit.png)
+
+## Chapter 4 Exercise 4
+
+The only difference between codes in *EX3* and *EX4* is `PlotOrbit *showFitLine(std::vector<Complex> points)`.
+
+Cartesian coordinates of bus station are first converted to polar coordinates $\rho\left(\theta\right)$, then fitted by cubic spline interpolation. To be compatible with the interface of `PlotOrbit`, the fit function is converted back as shown below.
+
+$$
+\left\{ 
+\begin{array}{ll}
+    X(\theta) = \rho(\theta) * \cos(\theta)\\
+    Y(\theta) = \rho(\theta) * \sin(\theta)\\
+\end{array}
+\right.
+$$
+
+```bash
+$ cat ../../data/points.txt | ./p1 
+```
+
+![Fitted route](CH4/EX4/data/fit.png)
