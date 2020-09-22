@@ -2,6 +2,13 @@
 
 #### Shuyang Cao
 
+- [Assignment 4](#assignment-4)
+      - [Shuyang Cao](#shuyang-cao)
+  - [Chapter 3 Exercise 13](#chapter-3-exercise-13)
+  - [Chapter 4 Exercise 3](#chapter-4-exercise-3)
+  - [Chapter 4 Exercise 4](#chapter-4-exercise-4)
+  - [Chapter 4 Exercise 5](#chapter-4-exercise-5)
+
 ## Chapter 3 Exercise 13
 
 equations of motion:
