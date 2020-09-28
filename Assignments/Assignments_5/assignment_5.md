@@ -105,3 +105,50 @@ Chebyshev relative error: 4.80984e-09
 ```
 
 ![period](CH5/EX2/perioid.png)
+
+## Chapter 5 Exercise 4
+
+Stationary Schrödinger equation
+
+$$
+-\frac{\hbar^2}{2m}\frac{\partial^2}{{\partial x}^2}\psi\left(x\right) - V_0 e^{-\frac{x^2}{2a^2}}\psi\left(x\right) = E\psi\left(x\right)
+$$
+
+Choose length unit $x_0=a$ and the reduced position $\xi=x/a$
+
+$$
+-\frac{\hbar^2}{2ma^2}\frac{\partial^2}{{\partial \xi}^2}\psi\left(\xi\right) - V_0 e^{-\frac{1}{2}\xi^2}\psi\left(\xi\right) = E\psi\left(\xi\right)
+$$
+
+Choose energy unit $E_0=\hbar^2/(2ma^2)$, reduced potential $v=V_0/E_0$ and reduced energy $\epsilon=E/E_0$
+
+$$
+-\frac{\partial^2}{{\partial \xi}^2}\psi\left(\xi\right) - v e^{-\frac{1}{2}\xi^2}\psi\left(\xi\right) = \epsilon\psi\left(\xi\right)
+$$
+
+The action (eqn 5.16)
+
+$$
+\mathcal{J}\left(E\right) = 2 \int_{x_{\min}}^{x_{\max}}{\sqrt{2m\left(E+V_0 e^{-\frac{x^2}{2a^2}}\right)}dx}
+$$
+
+Note that $\mathcal{J}\left(E\right)$ is a monotonically increasing function when $E<0$. The number of bound states is
+
+$$
+N = \left\lfloor\frac{\mathcal{J}\left(0\right)}{\hbar}-0.5\right\rfloor
+$$
+
+$$
+\begin{aligned}
+    N &  = \left\lfloor\frac{\mathcal{J}\left(0\right)}{\hbar}-0.5\right\rfloor\\
+    & = \left\lfloor\frac{4 \sqrt{2 \pi } a \sqrt{m V_0}}{\hbar}-0.5\right\rfloor\\
+    & = \left\lfloor4\sqrt{\pi}\sqrt{\frac{V_0}{\frac{\hbar^2}{2ma^2}}}-0.5\right\rfloor\\
+    & = \left\lfloor4\sqrt{\pi}\sqrt{v}-0.5\right\rfloor
+\end{aligned}
+$$
+
+```bash
+$ ./ex4
+```
+
+![Number of Bound States](CH5/EX4/number.png)
