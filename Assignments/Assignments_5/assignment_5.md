@@ -74,7 +74,7 @@ $$
 f\left(\theta\right)=\int_{-\theta_{\max}}^{\theta_{\max}}{\frac{1}{\pi\sqrt{2\left(\cos\theta - \cos\theta_{\max}\right)}}d\theta}
 $$
 
-In the limit $\theta \ll 1$,
+In the limit $\theta_{\max} \ll 1$,
 
 $$
 T \approx T_0 \int_{-\theta_{\max}}^{\theta_{\max}}{\frac{1}{\pi\sqrt{2\left({\theta_{\max}}^2 - \theta^2\right)}}d\theta} = T_0
