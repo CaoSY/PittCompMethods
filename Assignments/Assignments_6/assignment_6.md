@@ -194,7 +194,7 @@ f & = \eta\frac{\lambda n}{4} \frac{e^{-\frac{t}{\tau }}}{\tau }\\
 \end{aligned}
 $$
 
-If we wait long enough time that all $K^{40}$ decay. Gamma ray surface number density is
+If we wait long enough time so that all $K^{40}$ decay. Gamma ray surface number density is
 
 $$
 N=\int_0^\infin f dt=\frac{n\eta\lambda}{4}\approx3.41782\times{10}^{16}\enspace{cm}^{-2}
