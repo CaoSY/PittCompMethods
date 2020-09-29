@@ -180,6 +180,12 @@ Surface flux density
 $$
 \begin{aligned}
 f & = \eta\frac{\lambda n}{4} \frac{e^{-\frac{t}{\tau }}}{\tau }\\
-& = 0.62602 \left(\frac{1}{2}\right)^{-\frac{t}{1.2\times{10}^{9}yr}} {cm}^{-2}{s}^{-1}
+& \approx 0.62602 \left(\frac{1}{2}\right)^{-\frac{t}{1.2\times{10}^{9}yr}} {cm}^{-2}{s}^{-1}
 \end{aligned}
+$$
+
+If we wait long enough time that all $K^{40}$ decay. Gamma ray surface number density is
+
+$$
+N=\int_0^\infin f dt=\frac{n\eta\lambda}{4}\approx3.41782\times{10}^{16}\enspace{cm}^{-2}
 $$
