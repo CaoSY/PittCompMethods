@@ -107,3 +107,79 @@ $$
 $$
 
 ![Energy](CH5/EX9/energy.png)
+
+## Chapter 5 Exercise 12
+
+Suppose we wait for a long enough time so that all N atoms decay.
+
+### Part a
+
+$$
+\begin{aligned}
+       F\left(\frac{z}{\lambda}\right) & = \frac{N}{4\pi}\int_0^{2\pi}d\phi\int_0^\frac{\pi}{2}\sin\theta d\theta \left(1-\int_0^{\frac{z}{\cos\theta}}\frac{1}{\lambda}e^{-\frac{x}{\lambda}}dx\right)\\
+       & = \frac{N}{2}\left(e^{-\frac{z}{\lambda}}-\frac{z}{\lambda}\Gamma\left(0,\frac{z}{\lambda}\right)\right)
+\end{aligned}
+$$
+
+where $\Gamma(a,z)$ is the upper incomplete gamma function. Check ssymptotic behaviours of $\Gamma(\frac{z}{\lambda})$
+
+$$
+\begin{aligned}
+\lim_{z\to0}F\left(\frac{z}{\lambda}\right) & = \frac{N}{2}\\
+\lim_{z\to\infin}F\left(\frac{z}{\lambda}\right) & = 0
+\end{aligned}
+$$
+
+In the program, N is set to 1.
+
+```bash
+$ ./ex12
+```
+
+![Number](CH5/EX12/number.png)
+
+### Part b
+
+Ignore the limit of the speed of light and assume the gamma ray travels through the material instantly. This should be a resonable approximation in practice. The surface flux density is
+
+$$
+\begin{aligned}
+f & =\int_0^{\infty}\int_0^{\frac{\pi}{2}}\int_0^{2\pi}\left(n r^2 \sin\theta dr d\theta d\phi\right)\left(\frac{1}{\tau}e^{-\frac{t}{\tau}}\right)\left(\frac{\cos\theta}{4\pi r^2}\right)\left(1-\int_0^r \frac{1}{\lambda}e^{-\frac{x}{\lambda}}dx\right)\\
+& = \frac{\lambda n}{4} \frac{e^{-\frac{t}{\tau }}}{\tau }
+\end{aligned}
+$$
+
+### Part c
+
+Define
+
+$$
+\left\{
+\begin{array}{ll}
+Density\enspace of\enspace Granite & \rho = 2.7 g/{cm}^3\\
+Weight\enspace fraction\enspace of\enspace K_2O & \alpha=4\%\\
+Natural\enspace Abundance\enspace of\enspace K^{40} & \beta=0.012\%\\
+Gamma\enspace ray\enspace production\enspace efficiency & \eta=11\%\\
+Half\enspace of\enspace K^{40} & t_0={10}^{9} years\\
+Mass of K_2O & m = 1.56415\times10^{-22} g
+\end{array}
+\right.
+$$
+
+So,
+
+$$
+\begin{aligned}
+\tau & = t_0/\ln(2)\\
+n &= \frac{2\rho \alpha}{m}\beta
+\end{aligned}
+$$
+
+Surface flux density
+
+$$
+\begin{aligned}
+f & = \eta\frac{\lambda n}{4} \frac{e^{-\frac{t}{\tau }}}{\tau }\\
+& = 0.62602 \left(\frac{1}{2}\right)^{-\frac{t}{1.2\times{10}^{9}yr}} {cm}^{-2}{s}^{-1}
+\end{aligned}
+$$
