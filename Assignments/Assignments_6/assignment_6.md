@@ -1,8 +1,8 @@
-# Assignment 5
+# Assignment 6
 
 #### Shuyang Cao
 
-- [Assignment 5](#assignment-5)
+- [Assignment 6](#assignment-6)
       - [Shuyang Cao](#shuyang-cao)
   - [Chapter 4 Exercise 7](#chapter-4-exercise-7)
   - [Chapter 5 Exercise 7](#chapter-5-exercise-7)
