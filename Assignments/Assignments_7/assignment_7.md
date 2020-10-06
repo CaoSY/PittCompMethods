@@ -263,3 +263,67 @@ GOOD-BYE from the destructor.
 GOOD-BYE from the destructor.
 GOOD-BYE from the destructor.
 ```
+
+## Chapter 6 Exercise 4
+
+Note that the basis idea of matrix optics is to describe optical system using matrices. So (one of) the best practice to implement Mueller calculus is inheriting from a Matrix class. `Eigen::Matrix4d` and `EIgen::Vector4d` have already implemented all algebraic operations and output functions. So, we only need to add some extra constructors for convenience. Note that all constructors from `Eigen::Matrix4d` and `EIgen::Vector4d` are inherited. Hence, enssentially `StokesVector` and `MuellerMatrix` can be initialized as a normal `EIgen::Vector4d` or `Eigen::Matrix4d`. Declaration of `StokesVector` and `MuellerMatrix` are shown below.
+
+```c++
+class StokesVector: public 	Eigen::Vector4d
+{
+	public:
+		using Eigen::Vector4d::Vector4d;
+		enum Type {Horizontal,Vertical,Diagonal,Antidiagonal,RightHand,LeftHand,Unpolarized};
+
+		StokesVector(const double S0, const double S1, const double S2, const double S3);
+		StokesVector(const Type type, const double density=1, const double polarization=1);
+};
+
+class MuellerMatrix: public Eigen::Matrix4d
+{
+	public:
+		using Eigen::Matrix4d::Matrix4d;
+		enum Type {Identity,Horizontal,Vertical,Diagonal,Antidiagonal,FastHorizontal,FastVertical, Mirror};
+
+		MuellerMatrix(const Type type);
+		MuellerMatrix(const double transmission);	// Attenuating filter
+		MuellerMatrix(const double theta, const double delta);	// General linear retarder
+};
+```
+
+Output from the example code.
+
+```bash
+$ ./client 
+Initial vector: density=1, polarization=0.5, Right-hand circularly polarized
+  1
+  0
+  0
+0.5
+
+Filter: Horizontal linear polarizer
+0.5 0.5   0   0
+0.5 0.5   0   0
+  0   0   0   0
+  0   0   0   0
+
+Filter: Attenuation (Transmission 0.75)
+0.75    0    0    0
+   0 0.75    0    0
+   0    0 0.75    0
+   0    0    0 0.75
+
+Filter: Left hand circular polarizer
+           1            0            0            0
+           0  6.12323e-17  6.12323e-17            1
+           0  6.12323e-17            1 -6.12323e-17
+           0           -1  6.12323e-17  6.12323e-17
+
+Final vector:
+      0.375
+2.29621e-17
+2.29621e-17
+     -0.375
+
+```
+
