@@ -327,7 +327,7 @@ Final vector:
 
 ```
 
-Chapter 7 Exercise 2
+## Chapter 7 Exercise 2
 
 Define
 
@@ -365,3 +365,34 @@ $$
 For simplicity, we define $\beta=1$ in our program. The firgure is shown below, where the number of total data points is $N=10^7$ and the bin width is $w=0.06$. The pdf (black line) is scaled up by $N\times w$.
 
 ![Sample](CH7/EX2/sample.png)
+
+## Chapter 7 Exercise 5
+
+### a
+
+Two distributions are
+
+$$
+\begin{aligned}
+	f(x) &=\tau e^{-\tau x}, x\geq0\\
+	g(x) &=\frac{1}{\sqrt{2\pi}\sigma}e^{-\frac{x^2}{2\sigma^2}}
+\end{aligned}
+$$
+
+Their convolution is
+
+$$
+(f\ast g)(y)=\frac{1}{2} \tau  e^{\frac{\sigma ^2 \tau ^2}{2}-\tau  y} \left(\text{erf}\left(\frac{y-\sigma ^2 \tau }{\sqrt{2} \sigma }\right)+1\right), -\infty<y<\infty
+$$
+
+With $\tau=3,\sigma=2$, the convolution is
+
+$$
+(f\ast g)(y)=\frac{3}{2} e^{18-3 y} \left(\text{erf}\left(\frac{y-12}{2 \sqrt{2}}\right)+1\right)
+$$
+
+It reaches it maximum 0.1968556435586524 at y=0.324947777562519.
+
+The figure is shown below, where the black line is the analytic PDF, the red line is the histogram off the sum of two random variables, the blue line is the histogram from the rejection method. For the red line, $10^6$ points are sampled. For the blue line, we sample until $10^6$ successful samplings. The statistical rejection rate is 0.759496. The sampled range for the blue line is $[-10,11)$. We can tell from the figure that it is a reasonable approximation of $(-\infty,\infty)$ for this distribution. Note that due to the machine precision, our program failed to give a correct PDF value for $y\lessapprox-4$. This will also affect the rejection method since we need to compute the PDF there, too. But since the PDF value at $y\lessapprox-4$ is already small. This defect will not change the histogram too much.
+
+![Convolution](CH7/EX5/convolution.png)
