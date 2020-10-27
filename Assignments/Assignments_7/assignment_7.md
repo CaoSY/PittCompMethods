@@ -362,6 +362,6 @@ $$
 \rho(v)dv=\frac{1}{\Gamma(\alpha)\beta^\alpha}x^{\alpha-1}e^{-x/\beta}dx
 $$
 
-For simplicity, we define $\beta=1$ in our program. The firgure is shown below, where the number of total data points is $N=10^7$ and the bin width is $w=0.06$. The pdf is scale up by $N\times w$.
+For simplicity, we define $\beta=1$ in our program. The firgure is shown below, where the number of total data points is $N=10^7$ and the bin width is $w=0.06$. The pdf (black line) is scaled up by $N\times w$.
 
 ![Sample](CH7/EX2/sample.png)
