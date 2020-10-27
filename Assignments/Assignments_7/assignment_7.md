@@ -327,3 +327,41 @@ Final vector:
 
 ```
 
+Chapter 7 Exercise 2
+
+Define
+
+$$
+\begin{aligned}
+	x & = v^2 \Rightarrow dx=2vdv\\
+	\beta & = 2\tau/m
+\end{aligned}
+$$
+
+We get
+
+$$
+\rho(v)dv = \frac{1}{\frac{1}{2}\pi^{\frac{1}{2}}\beta^{\frac{3}{2}}}x^{\frac{1}{2}}e^{-\frac{x}{\beta}}dx
+$$
+
+Define
+
+$$
+\alpha = 3/2
+$$
+
+Note that
+
+$$
+\Gamma\left(\frac{3}{2}\right)=\frac{\sqrt{\pi}}{2}
+$$
+
+We have
+
+$$
+\rho(v)dv=\frac{1}{\Gamma(\alpha)\beta^\alpha}x^{\alpha-1}e^{-x/\beta}dx
+$$
+
+For simplicity, we define $\beta=1$ in our program. The firgure is shown below, where the number of total data points is $N=10^7$ and the bin width is $w=0.06$. The pdf is scale up by $N\times w$.
+
+![Sample](CH7/EX2/sample.png)
