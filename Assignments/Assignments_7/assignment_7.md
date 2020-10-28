@@ -416,3 +416,57 @@ $$
 The figure is shown below with $10^7$ successes and a rejection rate of 0.734441. Again, the PDF is scaled.
 
 ![Decay](CH7/EX6/decay.png)
+
+## Chapter 7 Exercise 12
+
+The relation between the PDF and the transformation equation is
+
+$$
+x=\int_{y_0}^{y}\rho_y(y)dy=f^{-1}(y)
+$$
+
+Hence,
+
+$$
+\rho_y(y)=\frac{d}{dy}(f^{-1}(y))
+$$
+
+Therefore,
+
+$$
+\begin{aligned}
+	f(x)=y_{\min}\left(\frac{y_{\max}}{y_{\min}}\right)^x && \Rightarrow && \rho(y) = \frac{1}{y\ln\frac{y_{\max}}{y_{\min}}}\\
+	f(x)=\sqrt{M^2+M\Gamma\tan\left(M\Gamma x\right)} && \Rightarrow && \rho(y) = \frac{2 y}{\Gamma ^2 M^2+\left(M^2-y^2\right)^2}
+\end{aligned}
+$$
+
+For the first transformation equation, we choose
+
+$$
+y_{\min} = 1, \quad y_{\max} = 10
+$$
+
+For the second transformation equation, to make $f(x)$ invertible, we choose
+
+$$
+M^2 = 1, \quad M\Gamma = \pi/4;
+$$
+
+Note that
+
+$$
+y_{\min} = M, \quad y_{\max} = \sqrt{M^2+M\Gamma\tan\left(M\Gamma\right)}
+$$
+
+We sample $10^7$ times. Figures are shown below.
+
+$$
+	f(x) = 1\cdot{10}^x \quad \rho(y) = \frac{1}{y\ln10}
+$$
+![1](CH7/EX12/1.png);
+
+
+$$
+	f(x) = \sqrt{1+\frac{\pi}{4}\tan\left(\frac{\pi}{4}x\right)} \quad \rho(y) = \frac{2y}{\left(\frac{\pi}{4}\right)^2+(1-y^2)^2}
+$$
+![2](CH7/EX12/2.png)
