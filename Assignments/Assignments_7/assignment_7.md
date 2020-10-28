@@ -2,6 +2,25 @@
 
 #### Shuyang Cao
 
+
+<!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
+
+<!-- code_chunk_output -->
+
+- [Assignment 7](#assignment-7)
+      - [Shuyang Cao](#shuyang-cao)
+  - [Chapter 6 Exercise 1](#chapter-6-exercise-1)
+  - [Chapter 6 Exercise 2](#chapter-6-exercise-2)
+  - [Chapter 6 Exercise 3](#chapter-6-exercise-3)
+  - [Chapter 6 Exercise 4](#chapter-6-exercise-4)
+  - [Chapter 7 Exercise 2](#chapter-7-exercise-2)
+  - [Chapter 7 Exercise 5](#chapter-7-exercise-5)
+  - [Chapter 7 Exercise 6](#chapter-7-exercise-6)
+  - [Chapter 7 Exercise 12](#chapter-7-exercise-12)
+
+<!-- /code_chunk_output -->
+
+
 ## Chapter 6 Exercise 1
 
 The initial code is copied from `ACP-Misc/SKELETONS/CH6/STACK`.
@@ -367,8 +386,6 @@ For simplicity, we define $\beta=1$ in our program. The firgure is shown below, 
 ![Sample](CH7/EX2/sample.png)
 
 ## Chapter 7 Exercise 5
-
-### a
 
 Two distributions are
 
