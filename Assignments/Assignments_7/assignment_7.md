@@ -396,3 +396,23 @@ It reaches it maximum 0.1968556435586524 at y=0.324947777562519.
 The figure is shown below, where the black line is the analytic PDF, the red line is the histogram off the sum of two random variables, the blue line is the histogram from the rejection method. For the red line, $10^6$ points are sampled. For the blue line, we sample until $10^6$ successful samplings. The statistical rejection rate is 0.759496. The sampled range for the blue line is $[-10,11)$. We can tell from the figure that it is a reasonable approximation of $(-\infty,\infty)$ for this distribution. Note that due to the machine precision, our program failed to give a correct PDF value for $y\lessapprox-4$. This will also affect the rejection method since we need to compute the PDF there, too. But since the PDF value at $y\lessapprox-4$ is already small. This defect will not change the histogram too much. The PDF is scaled up as in CH7/EX2.
 
 ![Convolution](CH7/EX5/convolution.png)
+
+## Chapter 7 Exercise 6
+
+Note that
+
+$$
+\int_{-1}^{1}\rho(\cos\theta) d\cos\theta = 1
+$$
+
+Therefore, we sample $\cos\theta$ as a whole instead of sampling $\theta$. The rejection method is used. We sample until $10^6$ successes.
+
+The maximum of $\rho$ is
+
+$$
+\rho_{\max}=\rho(\pm1)
+$$
+
+The figure is shown below with $10^7$ successes and a rejection rate of 0.734441. Again, the PDF is scaled.
+
+![Decay](CH7/EX6/decay.png)
