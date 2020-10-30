@@ -2,6 +2,48 @@
 
 #### Shuyang Cao
 
+## Chapter 7 Exercise 8
+
+Define
+$$
+\psi_\pm = \phi_1 \pm \phi_2
+$$
+$$
+N_+ = N_s, \quad N_- = N_a
+$$
+$$
+H_0 = -\frac{1}{2}\nabla^2 - \frac{1}{r}, \quad \phi_0 = \frac{1}{\sqrt{\pi}}e^{-r}
+$$
+
+Then
+$$
+N_\pm = \frac{1}{\sqrt{\int d^3x {\left|\psi_\pm\right|}^2}}
+$$
+$$
+E_\pm = N_\pm^2 \int d^3x \psi_\pm^* \hat{H} \psi_\pm
+$$
+
+By simple observations, we can conclude some asymptotic behaviours.
+$$
+\lim_{d\to0}N_+ = \frac{1}{2}, \quad \lim_{d\to0}N_- = \infty, \quad \lim_{d\to\infty}N_\pm = \frac{1}{\sqrt{2}}
+$$
+$$
+\lim_{d\to0}E_- = \infty, \quad \lim_{d\to\infty}E_\pm = \langle\phi_0|H_0|\phi_0\rangle = \frac{1}{2}
+$$
+
+In our Monte Carlo integration, we choose a sampling function as below.
+$$
+S(\vec{r}) = \frac{1}{\pi}e^{-2r} \ast \frac{1}{2}\left(\delta\left(\vec{r}-\frac{d}{2}\hat{z}\right) + \delta\left(\vec{r}+\frac{d}{2}\hat{z}\right)\right)
+$$
+
+Figures are shown below.
+
+![Ns](CH7/EX8/Ns.png)
+![Na](CH7/EX8/Na.png)
+![Es](CH7/EX8/Es.png)
+![Ea](CH7/EX8/Ea.png)
+
+
 ## Chapter 7 Exercise 15
 
 For $N$ identically distributied random variables $y_i$, whose variance is $V$ and standard deviation is $\sigma$, define
