@@ -2,6 +2,15 @@
 
 #### Shuyang Cao
 
+- [Assignment 8](#assignment-8)
+      - [Shuyang Cao](#shuyang-cao)
+  - [Chapter 7 Exercise 8](#chapter-7-exercise-8)
+  - [Chapter 7 Exercise 9](#chapter-7-exercise-9)
+  - [Chapter 7 Exercise 15](#chapter-7-exercise-15)
+    - [a](#a)
+    - [b](#b)
+    - [c](#c)
+
 ## Chapter 7 Exercise 8
 
 Define
@@ -43,6 +52,42 @@ Figures are shown below.
 ![Es](CH7/EX8/Es.png)
 ![Ea](CH7/EX8/Ea.png)
 
+
+## Chapter 7 Exercise 9
+
+Part c of `CH5-EX12` is merely an application of the reuslt of part b. Thus, we simulate the situation in part b directly. For simplicity, we set $n=1, \lambda=1, \tau=1$. Namely, the decay possibility is
+
+$$
+P_{decay}(t) = e^{-t}
+$$
+
+and the traveling distance probabilty is
+
+$$
+P_{travel}(r) = e^{-r}
+$$
+
+We check our simulation against the integrated flux density $F$, i.e.,the total number of gamma rays that reach the surface before time $t$ per surface area. In part b of `CH5-EX12`, the flux density is
+
+$$
+f(t) = \frac{\lambda n}{4} \frac{e^{-\frac{t}{\tau }}}{\tau }
+$$
+
+Therefore,
+
+$$
+F(t) = \int_{0}^t f(t') dt' = \frac{\lambda n}{4} \left(1 - e^{-\frac{t}{\tau}}\right)
+$$
+
+Due to the translational symmetry in xy plane, a gamma ray traveling from (x,y,z) to (a,b,0) is the same as a gamma ray traveling from (0,0,z) to (a-x,b-y,0). So we only sample along z axis and count gamma rays reaching the surface. The result is equal to the integrated flux density. To reduce the error, we iterate the simulation 1000 times and average the results. This simulation is time-consuming. Hence, we only check three points.
+
+In practice, we are not able to sample uniformly over an infite range. So we start from a relative small range in z, increase the range step by step and extrapolate to infinity eventually.
+
+| Time | Theorectial Result | Simulated Result |
+|------|--------------------|------------------|
+|0.5   |0.0983673           |0.100056          |
+|1     |0.1580301           |0.151389          |
+|2     |0.2161662           |0.229611          |
 
 ## Chapter 7 Exercise 15
 
