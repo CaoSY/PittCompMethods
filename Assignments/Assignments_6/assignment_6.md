@@ -131,7 +131,7 @@ $$
 \end{aligned}
 $$
 
-where $\Gamma(a,z)$ is the upper incomplete gamma function. Check ssymptotic behaviours of $\Gamma(\frac{z}{\lambda})$
+where $\Gamma(a,z)$ is the upper incomplete gamma function. Check asymptotic behaviours of $\Gamma(\frac{z}{\lambda})$
 
 $$
 \begin{aligned}
