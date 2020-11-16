@@ -100,3 +100,79 @@ In "Error of X v.s. tolerance" or "Error of Eta v.s. tolerance", slopes are the 
 ![Eta v.s. h](CH11/EX10/Etah.png)
 ![X v.s. h](CH11/EX10/Xtol.png)
 ![Eta v.s. h](CH11/EX10/Etatol.png)
+
+## Chapter 11 Exercise 14
+
+### a
+
+[Reference 1](https://diego.assencio.com/?index=1500c66ae7ab27bb0106467c68feebc6)
+
+$$
+\begin{aligned}
+    L = & \frac{1}{2}\left(m_1+m_2\right){l_1}^2\dot{\theta_1}^2 + \frac{1}{2}m_2{l_2}^2\dot{\theta_2}^2 + m_2 l_1 l_2\dot{\theta_1}\dot{\theta_2}\cos\left(\theta_1-\theta_2\right)\\
+    & + \left(m_1+m_2\right)gl_1\cos\theta_1 + m_2gl_2\cos\theta_2
+\end{aligned}
+$$
+
+### b
+
+[Reference 2](https://diego.assencio.com/?index=e5ac36fcb129ce95a61f8e8ce0572dbf)
+
+$$
+\begin{aligned}
+    H = & \frac{m_2{l_2}^2p_{\theta_1}^2 + \left(m_1+m_2\right){l_1}^2p_{\theta_2}^2 - 2 m_2 l_1 l_2 p_{\theta_1} p_{\theta_2}\cos\left(\theta_1-\theta_2\right)}{2m_2 {l_1}^2 {l_2}^2 \left[m_1 + m_2 \sin^2\left(\theta_1-\theta_2\right)\right]} \\
+    & - \left(m_1+m_2\right)gl_1\cos\theta_1 - m_2gl_2\cos\theta_2 \\
+    \\
+    p_{\theta_1} = & \left(m_1+m_2\right){l_1}^2\dot{\theta_1} + m_2 l_1 l_2 \dot{\theta_2} \cos\left(\theta_1 - \theta_2\right) \\
+    \\
+    p_{\theta_2} = & m_2 {l_2}^2\dot{\theta_2} + m_2 l_1 l_2 \dot{\theta_1} \cos\left(\theta_1 - \theta_2 \right)
+\end{aligned}
+$$
+
+### c
+
+[Reference 2](https://diego.assencio.com/?index=e5ac36fcb129ce95a61f8e8ce0572dbf)
+
+$$
+\begin{aligned}
+    \dot{\theta_1} = & \frac{l_2 p_{\theta_1} - l_1 p_{\theta_2}\cos\left(\theta_1 - \theta_2\right)}{{l_2}^2 l_2 \left[m_1 + m_2 \sin^2\left(\theta_1 - \theta_2\right)\right]} \\
+    \\
+    \dot{\theta_2} = & \frac{-m_2 l_2 p_{\theta_1}\cos\left(\theta_1 - \theta_2\right) + \left(m_1 + m_2\right)l_1 p_{\theta_2}}{m_2 l_1 {l_2}^2 \left[m_1 + m_2 \sin^2\left(\theta_1 - \theta_2\right)\right]} \\
+    \\
+    \dot{p}_{\theta_1} = & -\left(m_1 + m_2\right)gl_1\sin\theta_1 - h_1 + h_2\sin\left[2\left(\theta_1-\theta_2\right)\right] \\
+    \\
+    \dot{p}_{\theta_2} = & -m_2 g l_2 \sin\theta_2 + h_1 - h_2 \sin\left[2\left(\theta_1-\theta_2\right)\right]
+\end{aligned}
+$$
+
+where
+
+$$
+\begin{aligned}
+    h_1 = & \frac{p_{\theta_1} p_{\theta_2} \sin\left(\theta_1 - \theta_2\right)}{l_1 l_2 \left[m_1 + m_2 \sin^2\left(\theta_1 - \theta_2\right)\right]} \\
+    \\
+    h_2 = & \frac{m_2 {l_2}^2 p^2_{\theta_1} + \left(m_1+m_2\right){l_1}^2 p^2_{\theta_1} - 2m_2 l_1 l_2 p_{\theta_1} p_{\theta_2} \cos\left(\theta_1-\theta_2\right)}{2{l_1}^2 {l_2}^2 {\left[m_1+m_2\sin^2\left(\theta_1-\theta_2\right)\right]}^2}
+\end{aligned}
+$$
+
+### d
+
+For simplicity, set $m_1 = 1, m_2 = 2, l_1 = 2, l_2 = 1, g = 1$. This is nothing special but choosing a new unit system.
+
+The simulation time goes from 0 to 105.
+
+#### i
+
+The orbit fills a parallelogram.
+
+![Orbit I](CH11/EX14/Orbit%20I%20(t=105.000000).png)
+
+#### ii
+
+The initial condition is an unstable equilibrium point. Theoretically, the system will stay at the intial point. But error in the numerical integration will add a perturbation in the system. Therefore, eventually, the system will slide off the equilibrium point.
+
+The following two figures show how error accumulated during integration affect the behavior of system. The system slides off the equilibrium point suddenly between $t=100$ and $t=105$.
+
+![Orbit II 1](CH11/EX14/Orbit%20II%20(t=100.000000).png)
+
+![Orbit II 2](CH11/EX14/Orbit%20II%20(t=105.000000).png)
