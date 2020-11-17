@@ -2,6 +2,25 @@
 
 #### Shuyang Cao
 
+- [Assignment 11](#assignment-11)
+      - [Shuyang Cao](#shuyang-cao)
+  - [Chapter 11 Exercise 4](#chapter-11-exercise-4)
+  - [Chapter 11 Exercise 10](#chapter-11-exercise-10)
+    - [a](#a)
+    - [b & c](#b--c)
+  - [Chapter 11 Exercise 14](#chapter-11-exercise-14)
+    - [a](#a-1)
+    - [b](#b)
+    - [c](#c)
+    - [d](#d)
+      - [i](#i)
+      - [ii](#ii)
+  - [Exercise 15](#exercise-15)
+    - [a](#a-2)
+    - [b](#b-1)
+    - [c](#c-1)
+    - [d](#d-1)
+
 ## Chapter 11 Exercise 4
 
 Choosing generalized coordinates as $\theta$ and $\phi$, the Hamiltonian is
@@ -176,3 +195,94 @@ The following two figures show how error accumulated during integration affect t
 ![Orbit II 1](CH11/EX14/Orbit%20II%20(t=100.000000).png)
 
 ![Orbit II 2](CH11/EX14/Orbit%20II%20(t=105.000000).png)
+
+## Exercise 15
+
+### a
+
+$$
+\begin{aligned}
+    \frac{dS}{dt} = & b\cdot N + v\cdot R - \left(d+\lambda\right) \cdot S \\
+    \\
+    \frac{dE}{dt} = & \lambda\cdot S - \left(d + \alpha \right) \cdot E \\
+    \\
+    \frac{dI}{dt} = & \alpha\cdot E - \left(d + \gamma\right)\cdot I \\
+    \\
+    \frac{dR}{dt} = & \gamma\cdot I - \left(d + v\right)\cdot R
+\end{aligned}
+$$
+
+### b
+
+Add up above four equations.
+
+$$
+\begin{aligned}
+    & \frac{d}{dt}\left(S+E+I+R\right) = b\cdot N -d\cdot\left(S+E+I+R\right) \\
+    \\
+    \Rightarrow & \frac{dN}{dt} = \left(b-d\right)\cdot N
+\end{aligned}
+$$
+
+$N$ is constant when $b=d$. Namely, the population is static when $b=d$.
+
+### c
+
+Being infectious will not affect the death rate, which means this disease is nonfatal.
+
+### d
+
+```bash
+$ ./seir 
+Ratio at 6000 days: 0.00536684
+```
+
+![Infected Population Ratio](CH11/EX15/ratio.png)
+
+The ratio oscillates first and reaches stable value eventually. This is not the general behaviour of this coupled differential system. Not all sets of rates and intial conditions will produce a damped oscillation which is the case of our problem. Assuming the system will be stablized eventually as in our problem, we actually can compute the final stable ratio. Let all derivatives be zero.
+
+$$
+\begin{aligned}
+    0 = & b\cdot N + v\cdot R - \left(d+\lambda\right) \cdot S \\
+    \\
+    0 = & \lambda\cdot S - \left(d + \alpha \right) \cdot E \\
+    \\
+    0 = & \alpha\cdot E - \left(d + \gamma\right)\cdot I \\
+    \\
+    0 = & \gamma\cdot I - \left(d + v\right)\cdot R
+\end{aligned}
+$$
+
+There are two solutions.
+
+Solution 1:
+$$
+S=\frac{b n}{d},\quad E=0,\quad I=0,\quad R=0
+$$
+
+Solution 2:
+$$
+\begin{aligned}
+    S =& \frac{n (\alpha +d) (\gamma +d)}{\alpha  \beta }\\
+    \\
+    E =& -\frac{n (\gamma +d) (d+v) \left(-\alpha  b \beta +d^2 (\alpha +\gamma )+d^3+\alpha  \gamma  d\right)}{\alpha  \beta  d (\gamma  (\alpha +d+v)+(\alpha +d) (d+v))}\\
+    \\
+    I =& -\frac{n (d+v) \left(-\alpha  b \beta +d^2 (\alpha +\gamma )+d^3+\alpha  \gamma  d\right)}{\beta  d (\gamma  (\alpha +d+v)+(\alpha +d) (d+v))}\\
+    \\
+    R =&-\frac{\gamma  n \left(-\alpha  b \beta +d^2 (\alpha +\gamma )+d^3+\alpha  \gamma  d\right)}{\beta  d (\gamma  (\alpha +d+v)+(\alpha +d) (d+v))}\\
+\end{aligned}
+$$
+
+From the figure, we alreay know that solution 1 is not the solution to our problem. Thus, we choose solution 2. Then, the stable infected population ratio is
+
+$$
+ratio=-\frac{(d+v) \left(-\alpha  b \beta +d^2 (\alpha +\gamma )+d^3+\alpha  \gamma  d\right)}{\beta  d (\gamma  (\alpha +d+v)+(\alpha +d) (d+v))}
+$$
+
+Plug in our data.
+
+$$
+ratio\approx0.00537078
+$$
+
+This agrees with our numerical result.
