@@ -2,12 +2,17 @@
 
 #### Shuyang Cao
 
+
+<!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
+
+<!-- code_chunk_output -->
+
 - [Assignment 11](#assignment-11)
       - [Shuyang Cao](#shuyang-cao)
   - [Chapter 11 Exercise 4](#chapter-11-exercise-4)
   - [Chapter 11 Exercise 10](#chapter-11-exercise-10)
     - [a](#a)
-    - [b & c](#b--c)
+    - [b & c](#b-c)
   - [Chapter 11 Exercise 14](#chapter-11-exercise-14)
     - [a](#a-1)
     - [b](#b)
@@ -15,11 +20,14 @@
     - [d](#d)
       - [i](#i)
       - [ii](#ii)
-  - [Exercise 15](#exercise-15)
+  - [Chapter 11 Exercise 15](#chapter-11-exercise-15)
     - [a](#a-2)
     - [b](#b-1)
     - [c](#c-1)
     - [d](#d-1)
+
+<!-- /code_chunk_output -->
+
 
 ## Chapter 11 Exercise 4
 
@@ -196,7 +204,7 @@ The following two figures show how error accumulated during integration affect t
 
 ![Orbit II 2](CH11/EX14/Orbit%20II%20(t=105.000000).png)
 
-## Exercise 15
+## Chapter 11 Exercise 15
 
 ### a
 
