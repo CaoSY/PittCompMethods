@@ -264,3 +264,36 @@ fLine1	  = 0.656881	 +/-  0.012862	(limited)
 ```
 
 ![combo.png](EX3/e/combo.png)
+
+## Chapter 16 Exercise 7
+
+
+The potential is 
+
+$$
+V = -\frac{k}{r}
+$$
+
+where $k=GM_\odot m$
+
+THe equation of the orbit is
+
+$$
+r=\frac{a(1-e^2)}{1+e\cos(\theta-\theta_0)}
+$$
+
+where $a$ is the semimajro axis, $e$ is the eccentricity.
+
+We also have
+
+$$
+\frac{l^2}{mk} = a(1-e^2)
+$$
+
+where $l$ is the angular momenturm $l=m\dot{\theta}r^2$.
+
+Therefore,
+
+$$
+\dot{\theta}r^2 = \sqrt{GMa(1-e^2)}
+$$
